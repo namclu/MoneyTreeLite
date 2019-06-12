@@ -13,4 +13,9 @@
         <item name="elevation">@dimen/toolbar_elevation</item>
     </style>
 
+    <style name="Header1" parent="TextAppearance.AppCompat.Display1">
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
 </resources>
