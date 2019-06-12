@@ -1,7 +1,8 @@
-package com.namlu.moneytreelite
+package com.namlu.moneytreelite.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.namlu.moneytreelite.R
 
 class MainActivity : AppCompatActivity() {
 
