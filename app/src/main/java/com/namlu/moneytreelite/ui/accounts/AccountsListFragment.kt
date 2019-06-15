@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.namlu.moneytreelite.R
-import kotlinx.android.synthetic.main.fragment_accounts_list.*
 
 /**
  * The UI for the list of Accounts. This will show the list of Accounts and balance for each account.
@@ -29,6 +28,7 @@ class AccountsListFragment : Fragment() {
 
         accountsListViewModel.accounts.observe(this, Observer {
             // When accounts changes, this Observer will be invoked
+            println(it)
         })
 
         accountsListViewModel.balance.observe(this, Observer {

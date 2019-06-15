@@ -10,19 +10,4 @@ data class Account(
     val institution: String,
     val currency: String,
     val currentBalance: Float,
-    val currentBalanceInBase: Float) {
-
-    companion object {
-        // Hardcoded Account object used for testing
-        fun tempFactory(): Account {
-            return Account(
-                1,
-                "外貨普通(USD)",
-                "Test Bank",
-                "USD",
-                22.5f,
-                2306.0f
-            )
-        }
-    }
-}
+    val currentBalanceInBase: Float)
