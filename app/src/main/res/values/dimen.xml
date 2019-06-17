@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Space sizes -->
     <dimen name="dp_16">16dp</dimen>
     <dimen name="dp_8">8dp</dimen>
     <dimen name="dp_4">4dp</dimen>
 
+    <!-- Text sizes -->
+    <dimen name="sp_22">22sp</dimen>
+
+    <!-- Elements -->
     <dimen name="toolbar_elevation">@dimen/dp_16</dimen>
+
 </resources>

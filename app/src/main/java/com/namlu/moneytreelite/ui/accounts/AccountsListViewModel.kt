@@ -26,7 +26,7 @@ class AccountsListViewModel(app: Application) : AndroidViewModel(app) {
 
     // Transformations.map function will be triggered every time
     // accounts LiveData changes
-    val balance: LiveData<Float> = Transformations.map(_accounts) {
+    val balance: LiveData<Float> = Transformations.map(accounts) {
         var summedBalance = 0f
 
         it.forEach { account ->

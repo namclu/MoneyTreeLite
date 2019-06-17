@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.namlu.moneytreelite.R
 import kotlinx.android.synthetic.main.fragment_accounts_list.*
 
@@ -16,6 +18,9 @@ import kotlinx.android.synthetic.main.fragment_accounts_list.*
  *
  */
 class AccountsListFragment : Fragment() {
+
+    private lateinit var adapter: AccountsAdapter
+
     private lateinit var accountsListViewModel: AccountsListViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -24,12 +29,16 @@ class AccountsListFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        adapter = AccountsAdapter(view.context)
+        rv_accounts.adapter = adapter
+        rv_accounts.layoutManager = LinearLayoutManager(view.context, RecyclerView.VERTICAL, false)
+
         // Initialise the ViewModel instance
         accountsListViewModel = ViewModelProviders.of(this).get(AccountsListViewModel::class.java)
 
         accountsListViewModel.accounts.observe(this, Observer {
             // When accounts changes, this Observer will be invoked
-            println(it)
+            adapter.accounts = it
         })
 
         accountsListViewModel.balance.observe(this, Observer {

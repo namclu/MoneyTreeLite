@@ -18,4 +18,18 @@
         <item name="android:textColor">@color/colorWhite</item>
         <item name="android:background">@color/colorPrimary</item>
     </style>
+
+    <style name="LeadingText">
+        <item name="android:padding">@dimen/dp_8</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/sp_22</item>
+        <item name="android:fontFamily">sans-serif-condensed-light</item>
+    </style>
+
+    <style name="TrailingText">
+        <item name="android:padding">@dimen/dp_8</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/sp_22</item>
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+    </style>
 </resources>
