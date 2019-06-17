@@ -1,11 +1,35 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppBarLayout" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:elevation">@dimen/toolbar_elevation</item>
+        <item name="elevation">@dimen/toolbar_elevation</item>
+    </style>
+
+    <style name="Header1" parent="TextAppearance.AppCompat.Display1">
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="LeadingText">
+        <item name="android:padding">@dimen/dp_8</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/sp_22</item>
+        <item name="android:fontFamily">sans-serif-condensed-light</item>
+    </style>
+
+    <style name="TrailingText">
+        <item name="android:padding">@dimen/dp_8</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/sp_22</item>
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+    </style>
 </resources>
