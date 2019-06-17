@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import com.namlu.moneytreelite.model.Account
 import com.namlu.moneytreelite.model.AccountRepositoryImpl
 import com.namlu.moneytreelite.model.IAccountRepository
@@ -23,7 +24,15 @@ class AccountsListViewModel(app: Application) : AndroidViewModel(app) {
     val accounts: LiveData<List<Account>>
         get() = _accounts
 
-    private val _balance = MutableLiveData<Float>()
-    val balance: LiveData<Float>
-        get() = _balance
+    // Transformations.map function will be triggered every time
+    // accounts LiveData changes
+    val balance: LiveData<Float> = Transformations.map(_accounts) {
+        var summedBalance = 0f
+
+        it.forEach { account ->
+            summedBalance += account.currentBalance
+        }
+
+        return@map summedBalance
+    }
 }
